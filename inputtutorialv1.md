@@ -2,27 +2,24 @@
 
 ## Step 1: Introduction
 
-We are going to learn how to use the micro:bit to display different values. In your session you will be using the micro:bit to display soil moisture values
+We are going to learn how to use the micro:bit to input different muscial notes to play a song. In your session you will be using the micro:bit to send tasks to the soil moisture and environmental sensors.
 
 ## Step 2: Display any number
 
-To start, use the ``||basic:show number||`` command to display any number ``||input:on button A pressed||``    
+To start, use the ``||basic:show string||`` command to display "hello" ``||basic:on start||``    
 
 ```blocks
-input.onButtonPressed(Button.A, function () {
-    basic.showNumber(0)
+basic.showString("hello")
 })
 ```
 
 ## Step 3: Display mathematical values
 
-Now change the value of ``||basic:show number||`` to be a ``||math:square root||`` solution. In your session you will use the soil moisture sensor to gather data to display on the micro:bit.
-
-Test out different values on the micro:bit!
+You want your music to maintain a consistent tempo, so you should ``||music:set tempo||`` in the ``||basic:forever||`` function to whatever you want it to be.
 
 ```blocks
-input.onButtonPressed(Button.A, function () {
-    basic.showNumber(Math.sqrt(25))
+basic.forever(function() {
+    music.setTempo(120)
 })
 ```
 
@@ -30,14 +27,16 @@ input.onButtonPressed(Button.A, function () {
 
 Repeat steps 2 and 3 using ``||led:plot bar graph||`` and ``||input:on button B pressed||`` instead of ``||basic:show number||`` and ``||input:on button A pressed||``. Experiment with different ways of displaying values.
 
+Now we want to set our inputs as musical notes. ``||music:play tone||`` Middle A# ``||input:on button A pressed||`` for 1 beat, Middle G# ``||input:on button B pressed||``, and Middle F# ``||input:on button A+B pressed||``. Play around and make some music! Change your notes, beat count, and tempo to hear different sounds.
+
 ```blocks
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(Math.sqrt(25))
+    music.playTone(466,1)
 })
 input.onButtonPressed(Button.B, function () {
-    led.plotBarGraph(
-    Math.sqrt(25),
-    25
-    )
+    music.playTone(415,1)
+})
+input.onButtonPressed(Button.AB, function () {
+    music.playTone(370,1)
 })
 ```
