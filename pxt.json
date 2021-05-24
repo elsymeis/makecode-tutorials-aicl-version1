@@ -13,7 +13,7 @@
         "main.py",
         "outputtutorialv1.md",
         "logictutorialv1.md",
-        "inputtutorialv1.md"
+        "inputtutv1.md"
     ],
     "testFiles": [
         "test.ts"
