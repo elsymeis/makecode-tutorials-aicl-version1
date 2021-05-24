@@ -2,7 +2,7 @@
 
 ## Step 1: Introduction
 
-We are going to learn how to use the micro:bit to display different values. In your session you will be using the micro:bit to display soil moisture, temperature, and CO2 values.
+We are going to learn how to use the micro:bit to display different values. In your session you will be using the micro:bit to display soil moisture values
 
 ## Step 2: Display any number
 
