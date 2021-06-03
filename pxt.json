@@ -5,7 +5,9 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "gatorEnvironment": "github:sparkfun/pxt-gator-environment#v1.0.13",
+        "gatorSoil": "github:sparkfun/pxt-gator-soil#v1.0.3"
     },
     "files": [
         "main.blocks",
@@ -14,7 +16,8 @@
         "main.py",
         "outputtutorialv1.md",
         "logictutorialv1.md",
-        "inputtutorialv1.md"
+        "inputtutorialv1.md",
+        "sensorstutorialv1.md"
     ],
     "testFiles": [
         "test.ts"
