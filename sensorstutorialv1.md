@@ -29,7 +29,7 @@ input.onButtonPressed(Button.B, function () {
 gatorEnvironment.beginEnvironment()
 ```
 
-## Step 4: Display the soil moisture values
+## Step 4: Display the soil moisture values and water the fig plant
 
 Display the ``||gatorSoil:get moisture||`` value while ``||input:button A+B is pressed||`` using the soil moisture sensor. ``||math:Round||`` the value if necessary. You should have the signal come from pin P0 and the power from pin P1. When you check the soil moisture, water the plant by setting ``||pins:digital write||`` pin on pin 2 to 1. This will turn on the water pump. ``||basic:Pause||`` for 5 seconds then set the pin back to 0.
 
