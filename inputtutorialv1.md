@@ -9,6 +9,7 @@ We are going to learn how to use the micro:bit to input different button presses
 To start, set a ``||neopixel:strip||`` to one of the pins on your digital micro:bit (0, 1, or 2) in RGB format ``||input:on button A pressed||``. In your session, you will want to set the strip to pin 12 becasue the LEDs will be displayed on the gator:bit.
 
 ```blocks
+let strip: neopixel.Strip = null
 input.onButtonPressed(Button.A, function () {
     strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
 })
@@ -19,6 +20,7 @@ input.onButtonPressed(Button.A, function () {
 Set the same strip for inputs ``||input:on button B pressed||`` and ``||input:on button A+B pressed||``.
 
 ```blocks
+let strip: neopixel.Strip = null
 input.onButtonPressed(Button.A, function () {
     strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
 })
@@ -35,6 +37,7 @@ input.onButtonPressed(Button.B, function () {
 Finally, add ``||neopixel:show LED color||`` to button A pressed and button B pressed and display red and green. On button A+B pressed ``||neopixel:show a rainbow||``.
 
 ```blocks
+let strip: neopixel.Strip = null
 input.onButtonPressed(Button.A, function () {
     strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
     strip.showColor(neopixel.colors(NeoPixelColors.Red))
