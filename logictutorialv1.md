@@ -36,7 +36,7 @@ basic.forever(function() {
 
 ## Step 4: Display icons
 
-``||basic:show icon||`` straight face whenever no buttons are being pressed, smiley face when button A is being pressed, and frowny face when button B is being pressed. Experiement with different conditions and display options!
+``||basic:show icon||`` straight face whenever no buttons are being pressed, smiley face when button A is being held down, and frowny face when button B is being held down. Experiement with different conditions and display options!
 
 ```blocks
 basic.forever(function () {
