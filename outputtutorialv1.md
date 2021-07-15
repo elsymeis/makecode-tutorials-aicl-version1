@@ -2,42 +2,72 @@
 
 ## Step 1: Introduction
 
-We are going to learn how to use the micro:bit to display different values. In your session you will be using the micro:bit to display soil moisture, temperature, and CO2 values.
+We are going to learn different ways to use the micro:bit to display values. In your session you will be displaying soil moisture, temperature, and CO2 values.
 
-## Step 2: Display any number
+## Step 2: Set a variable
 
-To start, use the ``||basic:show number||`` command to display any number ``||input:on button A pressed||``    
+On ``||basic:start||`` add a ``||variables:new variable||`` called "number" and set it to 5.
 
 ```blocks
-input.onButtonPressed(Button.A, function () {
-    basic.showNumber(0)
-})
+let number = 0
+number = 5
 ```
 
-## Step 3: Display mathematical values
+## Step 3: Display a number
 
-Now change the value of ``||basic:show number||`` to be a ``||math:square root||`` solution. In your session you will use the soil moisture sensor to gather data to display on the micro:bit.
-
-Test out different values on the micro:bit!
+Display ``||variables:number||`` on the micro:bit when ``||input:button A is pressed||`` using the ``||basic:show string||`` command.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(Math.sqrt(25))
+    basic.showString("" + (number))
 })
+let number = 0
+number = 5
 ```
 
-## Step 4: Display with a bar graph
+## Step 4: Display an icon
 
-Repeat steps 2 and 3 using ``||led:plot bar graph||`` and ``||input:on button B pressed||`` instead of ``||basic:show number||`` and ``||input:on button A pressed||``. Experiment with different ways of displaying values.
+Another way to display outputs is using the micro:bit's LEDs to show different icons. While ``||input:button B is pressed||``, have the ``||basic:show leds||`` command display a heart.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(Math.sqrt(25))
+    basic.showString("" + (number))
 })
 input.onButtonPressed(Button.B, function () {
-    led.plotBarGraph(
-    Math.sqrt(25),
-    25
-    )
+    basic.showLeds(`
+        . # . # .
+        # . # . #
+        # . . . #
+        . # . # .
+        . . # . .
+        `)
 })
+let number = 0
+number = 5
 ```
+## Step 5: Display an icon
+
+Finally, add ``||basic:show icon||`` while ``||input:button A+B is pressed||`` and choose an icon to display on the micro:bit.
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    basic.showString("" + (number))
+})
+input.onButtonPressed(Button.AB, function () {
+    basic.showIcon(IconNames.Happy)
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showLeds(`
+        . # . # .
+        # . # . #
+        # . . . #
+        . # . # .
+        . . # . .
+        `)
+})
+let number = 0
+number = 5
+```
+
+
+
