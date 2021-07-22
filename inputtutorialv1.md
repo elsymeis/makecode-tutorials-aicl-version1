@@ -2,53 +2,34 @@
 
 ## Step 1: Introduction
 
-We are going to learn how to use the micro:bit to input different button presses to display different LED colors. In your session you will display LEDs based on the findings of the soil moisture and environmental sensors to guide your decisions. 
+We are going to learn how to use the buttons on the micro:bit to input different commands. For this tutorial, we will input sound commands that will be useful to you in your session. 
 
 ## Step 2: Button presses
-  
-To start, set a ``||neopixel:strip||`` to one of the pins on your digital micro:bit (0, 1, or 2) in RGB format ``||input:on button A pressed||``. In your session, you will want to set the strip to pin 12 becasue the LEDs will be displayed on the gator:bit.
+
+To start, pull out the ``||input:on button A pressed||`` input and ``||music:start the melody||`` "dadadum" when the button is pressed. Have the melody repeat once, then ``||basic:pause||`` for 5 seconds and play it once more.
 
 ```blocks
-let strip: neopixel.Strip = null
 input.onButtonPressed(Button.A, function () {
-    strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
+    music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+    basic.pause(5000)
+    music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
 })
 ```
 
 ## Step 3: More button presses
 
-Set the same strip for inputs ``||input:on button B pressed||`` and ``||input:on button A+B pressed||``.
+``||input:On button B pressed||``, ``||music:play a custom melody||`` at 120 bpm. Play another ``||input:on button A+B pressed||``.
 
 ```blocks
-let strip: neopixel.Strip = null
 input.onButtonPressed(Button.A, function () {
-    strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
+    music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+    basic.pause(5000)
+    music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
 })
 input.onButtonPressed(Button.AB, function () {
-    strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
+    music.startMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once)
 })
 input.onButtonPressed(Button.B, function () {
-    strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
+    music.playMelody("E B C5 A B G A F ", 120)
 })
 ```
-
-## Step 4: Display different colors
-
-Finally, add ``||neopixel:show LED color||`` to button A pressed and button B pressed and display red and green. On button A+B pressed ``||neopixel:show a rainbow||``.
-
-```blocks
-let strip: neopixel.Strip = null
-input.onButtonPressed(Button.A, function () {
-    strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
-    strip.showColor(neopixel.colors(NeoPixelColors.Red))
-})
-input.onButtonPressed(Button.AB, function () {
-    strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
-    strip.showRainbow(1, 260)
-})
-input.onButtonPressed(Button.B, function () {
-    strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
-    strip.showColor(neopixel.colors(NeoPixelColors.Orange))
-})
-```
-
