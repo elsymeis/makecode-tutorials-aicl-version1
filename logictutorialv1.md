@@ -36,7 +36,7 @@ basic.forever(function() {
 
 ## Step 4: Display icons
 
-Now let's add our "then" statements to the conditions. If button A is pressed, then ``||input:show a smiley face icon||``. If button B is pressed, then ``||input:show a frowny face icon||``. Finally, ifi neither A nor B are pressed, ``||input:show a straight face icon||``. Test your code on the digital micro:bit!
+Now let's add our "then" statements to the conditions. If button A is pressed (AND HELD DOWN), then ``||input:show a smiley face icon||``. If button B is pressed (AND HELD DOWN), then ``||input:show a frowny face icon||``. Finally, ifi neither A nor B are pressed, ``||input:show a straight face icon||``. Test your code on the digital micro:bit!
 
 ```blocks
 basic.forever(function () {

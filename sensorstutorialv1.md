@@ -19,7 +19,7 @@ gatorEnvironment.beginEnvironment()
 
 The environmental sensor can also be used to detect air quality. on ``||input:button B is pressed||``, display the air's CO2 levels using the ``||basic:show number||`` and ``||gatorEnvironment:get value||`` commands.
 
-While displaying the CO2 levels, light up the gator:bit's built-in LED strip by setting the ``||neopixel:strip||`` to ``||neopixel:Neopixel at pin P12||`` in RGB color format. Pin P12 is the gator:bit's built in pin. Then, set the ``||neopixel:strip||`` to ``||neopixel:show color||`` of your choice. 
+While displaying the CO2 levels, light up the gator:bit's built-in LED strip by setting the ``||neopixel:strip||`` to ``||neopixel:Neopixel at pin P12||`` in RGB color format. Pin P12 is the gator:bit's built in pin. Then, set the ``||neopixel:strip||`` to ``||neopixel:show color||`` of your choice. Display the color for ``||basic:5 seconds||`` then ``||neopixel:show color||`` black to turn the strip off.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -27,8 +27,10 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.B, function () {
     basic.showNumber(gatorEnvironment.getMeasurement(measurementType.eCO2))
-    strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
-    strip.showColor(neopixel.colors(NeoPixelColors.Orange))    
+    strip = neopixel.create(DigitalPin.P12, 24, NeoPixelMode.RGB)
+    strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+    basic.pause(5000)
+    strip.showColor(neopixel.colors(NeoPixelColors.Black))
 })
 let strip: neopixel.Strip = null
 gatorEnvironment.beginEnvironment()
@@ -54,8 +56,10 @@ input.onButtonPressed(Button.AB, function () {
 })
 input.onButtonPressed(Button.B, function () {
     basic.showNumber(gatorEnvironment.getMeasurement(measurementType.eCO2))
-    strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
-    strip.showColor(neopixel.colors(NeoPixelColors.Orange))  
+    strip = neopixel.create(DigitalPin.P12, 24, NeoPixelMode.RGB)
+    strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+    basic.pause(5000)
+    strip.showColor(neopixel.colors(NeoPixelColors.Black))
 })
 let strip: neopixel.Strip = null
 gatorEnvironment.beginEnvironment()
