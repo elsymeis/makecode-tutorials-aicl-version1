@@ -19,7 +19,7 @@ gatorEnvironment.beginEnvironment()
 
 The environmental sensor can also be used to detect air quality. on ``||input:button B is pressed||``, display the air's CO2 levels using the ``||basic:show number||`` and ``||gatorEnvironment:get value||`` commands.
 
-While displaying the CO2 levels, light up the gator:bit's built-in LED strip by setting the ``||neopixel:strip||`` to ``||neopixel:Neopixel at pin P12||`` in RGB color format. Pin P12 is the gator:bit's built in pin. Then, set the ``||neopixel:strip||`` to ``||neopixel:show color||`` of your choice. Display the color for ``||basic:5 seconds||`` then ``||neopixel:show color||`` black to turn the strip off.
+While displaying the CO2 levels, light up the gator:bit's built-in LED strip by setting the ``||neopixel:strip||`` to ``||neopixel:Neopixel at pin P12||`` in RGB color format. Pins are the "path" in which your commands communicate with the sensors/LEDs and pin P12 is the gator:bit's built in pin. Then, set the ``||neopixel:strip||`` to ``||neopixel:show color||`` of your choice. Display the color by ``||basic:pausing||`` for 5 seconds, then ``||neopixel:show color||`` black to turn the strip off.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
