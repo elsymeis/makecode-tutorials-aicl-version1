@@ -1,6 +1,6 @@
 {
     "name": "MakeCode-Tutorials-AICL-version1",
-    "version": "1.0.10",
+    "version": "2.0.0",
     "description": "",
     "dependencies": {
         "core": "*",
